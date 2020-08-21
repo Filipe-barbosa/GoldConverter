@@ -55,7 +55,7 @@ function getGoldConverter() {
   return inputAmount;
 }
 
-function converter() {
+function getConverter() {
  getGoldSelector()
  getGoldConverter()
   var conversao = document.getElementById("gold-result");
@@ -70,5 +70,5 @@ function converter() {
    aux = goldInverterSelect.value;
    goldInverterSelect.value = goldInverterConverter.value;
    goldInverterConverter.value = aux; 
-   goldconverter();
+   getConverter();
  }
