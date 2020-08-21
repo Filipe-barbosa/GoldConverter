@@ -70,4 +70,5 @@ function converter() {
    aux = goldInverterSelect.value;
    goldInverterSelect.value = goldInverterConverter.value;
    goldInverterConverter.value = aux; 
+   goldconverter();
  }
