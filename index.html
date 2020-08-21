@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Traduzindo a minha grana</title>
+  <!-- Fonte -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Scripts (jQuery não pode ser o slim que vem do Boostrap) -->
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/bf7e05c402.js" crossorigin="anonymous"></script>
+  <!-- Progress Bar -->
+  <script src="js/progressbar.min.js"></script>
+  <!-- Parallax -->
+  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <div class="container" id="nav-container">
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+
+        <a href="#" class="navbar-brand">
+          <img id="logo" src="img/patolino.gif" alt="logo" > Traduzindo a minha grana 
+
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-links"
+          aria-controls="navbar-links" aria-expanded="false" aria-label="Toggle navigation ">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end " id="navbar-links">
+          <div class="navbar-nav">
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div id="insert-values">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <select id="gold-select" class="custom-select bg-secondary text-white">
+              <option selected>Moeda a ser Convertida</option>
+              <option value="1">Dolar</option>
+              <option value="2">Dolar Autraliano</option>
+              <option value="3">Dolar Canadense</option>
+              <option value="4">Euro</option>
+              <option value="5">Franco Suiço</option>
+              <option value="6">Litra Estrelina</option>
+              <option value="7">Lira Turca</option>
+              <option value="8">Real</option>
+              <option value="9">Renminbi</option>
+              <option value="10"> Peso Argentino </option>
+            </select>
+            <img src="img/seta.png" width="35" style="margin-left:50px; cursor: pointer" onclick=" 
+            inputInverter()" title="Inverter Moedas">
+
+          </div>
+          <div class="col-md-6">
+            <select id="gold-converter" class="custom-select bg-secondary text-white">
+              <option selected>Moeda a ser Convertida</option>
+              <option value="1">Dolar</option>
+              <option value="2">Dolar Autraliano</option>
+              <option value="3">Dolar Canadense</option>
+              <option value="4">Euro</option>
+              <option value="5">Franco Suiço</option>
+              <option value="6">Litra Estrelina</option>
+              <option value="7">Lira Turca</option>
+              <option value="8">Real</option>
+              <option value="9">Renminbi</option>
+              <option value="10"> Peso Argentino </option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <h4 class="main-title">Valor</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <form action=" ">
+              <input type="number" class="form-control" id="gold-value" name="moeda"
+                placeholder="Insira o valor a converter">
+            </form>
+          </div>
+          <div class="col-md-6">
+            <form action=" ">
+              <input type="number" class="form-control" id="gold-result" name="moeda" placeholder="Valor Convertido">
+            </form>
+          </div>
+        </div>
+        
+        <div class="button">
+          <div class="row">
+            <div class="col-md-12">
+              <button class="btn btn-secondary" type="button" onclick="converter()">Converter</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!--
+  <footer>
+    <div id="copy-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Desenvolvido por <a href="https://www.pje.jus.br" target="_blank">Filipe Barbosa</a> &copy; 2020 </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  -->
+  <!--Scritps do projeto-->
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
