@@ -1,9 +1,7 @@
-var moeda = document.getElementById("gold-value");
-var goldValue= 0;
-var inputAmount= 0;
+
 function getGoldSelector() {
   var goldselect = $("#gold-select").val();
-  
+  var goldValue= 0;
   if (goldselect== 1) {
     goldValue = 5;
   } else if (goldselect== 2) {
@@ -30,6 +28,7 @@ function getGoldSelector() {
 
 function getGoldConverter() {
   var goldconverter = $("#gold-converter").val();
+  var inputAmount= 0;
   
   if (goldconverter== 1) {
     inputAmount = 5;
@@ -56,12 +55,12 @@ function getGoldConverter() {
 }
 
 function getConverter() {
- getGoldSelector()
- getGoldConverter()
-  var conversao = document.getElementById("gold-result");
-  conversao.value = moeda.value *(goldValue/inputAmount);
+  const sourceCurrency = getGoldSelector()
+  const destCurrency = getGoldConverter()
+  const resultElement = document.getElementById("gold-result");
+  const inputElement = document.getElementById("gold-value");
+  resultElement.value = inputElement.value *(sourceCurrency/destCurrency);
 }
-
 
  function inputInverter(){
   var goldInverterSelect = document.getElementById("gold-select");
