@@ -1,7 +1,9 @@
 
 const value2Gold = {
-  '1': 5, '2': 4, '3': 4.22, '4': 6.59, '5': 6.12,
-  '6': 7.35, '7': 0.76, '8': 1, '9': 0.076, '10': 0.80
+  'Dolar': 5, 'Dolar Autraliano': 4, 'Dolar Canadense': 4.22,
+  'Euro': 6.59, 'Franco Suiço': 6.12, 'Libra Estrelina': 7.35,
+  'Lira Turca': 0.76, 'Real': 1, 'Renminbi': 0.076,
+  'Peso Argentino': 0.80
 }
 
 function getGoldSelector() {
