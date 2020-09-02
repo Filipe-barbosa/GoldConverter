@@ -6,6 +6,21 @@ const value2Gold = {
   'Peso Argentino': 0.80
 }
 
+function generateHtmlOptions() {
+  const options = []
+  for (const currency of Object.keys(value2Gold)) {
+    options.push(`<option>${currency}</option>`)
+  }
+  return options
+}
+
+
+function loadCurrencyOptions() {
+  const options = generateHtmlOptions()
+  document.getElementById("gold-select").innerHTML = options
+  document.getElementById("gold-converter").innerHTML = options
+}
+
 function getGoldSelector() {
   const value = getValueToConvert("#gold-select")
   return value2Gold[value]
@@ -36,3 +51,5 @@ function inputInverter() {
   goldInverterConverter.value = aux;
   getConverter();
 }
+
+loadCurrencyOptions()
