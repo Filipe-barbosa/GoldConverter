@@ -6,19 +6,21 @@ const value2Gold = {
   'Peso Argentino': 0.80
 }
 
-function generateHtmlOptions() {
+function generateHtmlOptions(selectedCurrency) {
   const options = []
   for (const currency of Object.keys(value2Gold)) {
-    options.push(`<option>${currency}</option>`)
+    if (selectedCurrency != null && currency === selectedCurrency) {
+      options.push(`<option selected>${currency}</option>`)
+    } else {
+      options.push(`<option>${currency}</option>`)
+    }
   }
   return options
 }
 
-
 function loadCurrencyOptions() {
-  const options = generateHtmlOptions()
-  document.getElementById("gold-select").innerHTML = options
-  document.getElementById("gold-converter").innerHTML = options
+  document.getElementById("gold-select").innerHTML = generateHtmlOptions("Dolar")
+  document.getElementById("gold-converter").innerHTML = generateHtmlOptions("Real")
 }
 
 function getGoldSelector() {
