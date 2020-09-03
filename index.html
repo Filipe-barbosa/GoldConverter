@@ -52,12 +52,16 @@
       <div class="container">
 
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <select id="gold-select" class="custom-select bg-secondary text-white"> </select>
-            <img src="img/seta.png" width="35" style="margin-left:50px; cursor: pointer" onclick="inputInverter()"
-              title="Inverter Moedas">
+
+            <div id="inverter">
+              <div class="col-md-2">
+                <img src="img/seta.png" width="35" onclick="  inputInverter()" title="Inverter Moedas">
+              </div>
+            </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-5">
             <select id="gold-converter" class="custom-select bg-secondary text-white"></select>
           </div>
         </div>
@@ -68,13 +72,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-5">
             <form action=" ">
               <input type="number" class="form-control" id="gold-value" name="moeda"
                 placeholder="Insira o valor a converter">
             </form>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-5">
             <form action=" ">
               <input type="number" class="form-control" id="gold-result" name="moeda" placeholder="Valor Convertido">
             </form>
