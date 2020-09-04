@@ -1,6 +1,6 @@
 
 const value2Gold = {
-  '\ud83c\uddfa\ud83c\uddf8 Dolar ': 5, '\ud83c\udde6\ud83c\uddfa Dolar Autraliano': 4, '\ud83c\udde8\ud83c\udde6 Dolar Canadense': 4.22,
+  '\ud83c\uddfa\ud83c\uddf8 Dolar': 5, '\ud83c\udde6\ud83c\uddfa Dolar Autraliano': 4, '\ud83c\udde8\ud83c\udde6 Dolar Canadense': 4.22,
   '\uD83C\uDDEA\uD83C\uDDFA Euro': 6.59, '	\ud83c\uddeb\ud83c\uddf7 Franco Suiço': 6.12, '\ud83c\udded\ud83c\uddf2 Libra Estrelina': 7.35,
   '\ud83c\uddf9\ud83c\uddf7 Lira Turca': 0.76, '\ud83c\udde7\ud83c\uddf7 Real': 1, '\ud83c\udde8\ud83c\uddf3 Renminbi': 0.076,
   '	\ud83c\udde6\ud83c\uddf7 Peso Argentino': 0.80
@@ -20,8 +20,7 @@ function generateHtmlOptions(selectedCurrency) {
 
 function loadCurrencyOptions() {
   document.getElementById("gold-select").innerHTML = generateHtmlOptions("\ud83c\uddfa\ud83c\uddf8 Dolar ")
-  document.getElementById("gold-converter").innerHTML = generateHtmlOptions("\ud83c\udde7\ud83c\uddf7 Real")
-  '\ud83c\udde7\ud83c\uddf7'
+  document.getElementById("gold-converter").innerHTML = generateHtmlOptions('\ud83c\udde7\ud83c\uddf7 Real')
 }
 
 function getGoldSelector() {
