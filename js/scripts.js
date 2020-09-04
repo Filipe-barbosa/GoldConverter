@@ -19,8 +19,8 @@ function generateHtmlOptions(selectedCurrency) {
 }
 
 function loadCurrencyOptions() {
-  document.getElementById("gold-select").innerHTML = generateHtmlOptions("Dolar")
-  document.getElementById("gold-converter").innerHTML = generateHtmlOptions("Real")
+  document.getElementById("gold-select").innerHTML = generateHtmlOptions("\ud83c\uddfa\ud83c\uddf8 Dolar ")
+  document.getElementById("gold-converter").innerHTML = generateHtmlOptions("\ud83c\udde7\ud83c\uddf7 Real")
   '\ud83c\udde7\ud83c\uddf7'
 }
 
