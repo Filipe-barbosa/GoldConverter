@@ -1,6 +1,11 @@
 /*Estilos Gerais*/
+@font-face {
+  font-family: 'NotoColorEmoji';
+  src: url('NotoColorEmoji.ttf') format('truetype');
+}
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'NotoColorEmoji',"Roboto", sans-serif,;
+ 
 }
 
 .row {
@@ -115,6 +120,16 @@ header,
 .button {
   margin-left: 340px;
   width: 80%;
+}
+
+
+
+.Extralight {
+  font-family: ralewayExtralight;
+}
+
+.Bold {
+  font-family: ralewayBold;
 }
 
 @media (max-width: 1188px) {
