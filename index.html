@@ -34,7 +34,7 @@
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
 
         <a href="#" class="navbar-brand">
-          <img id="logo" src="img/patolino.gif" alt="logo"> Traduzindo a minha grana 
+          <img id="logo" src="img/patolino.gif" alt="logo"> Traduzindo a minha grana
 
         </a>
 
@@ -53,7 +53,7 @@
 
         <div class="row">
           <div class="col-md-5">
-            <select id="gold-select" class="custom-select bg-secondary text-white"> </select>
+            <select id="gold-select" class="custom-select bg-secondary text-white"onclick="getConverter()"> </select>
 
             <div id="inverter">
               <div class="col-md-2">
@@ -62,7 +62,7 @@
             </div>
           </div>
           <div class="col-md-5">
-            <select id="gold-converter" class="custom-select bg-secondary text-white"></select>
+            <select id="gold-converter" class="custom-select bg-secondary text-white" onclick="getConverter()"></select>
           </div>
         </div>
 
@@ -75,7 +75,7 @@
           <div class="col-md-5">
             <form action=" ">
               <input type="number" class="form-control" id="gold-value" name="moeda" onkeyup="getConverter()"
-                placeholder="Insira o valor a converter" >
+                placeholder="Insira o valor a converter">
             </form>
           </div>
           <div class="col-md-5">
@@ -84,14 +84,14 @@
             </form>
           </div>
         </div>
-
+        <!--
         <div class="button">
           <div class="row">
             <div class="col-md-12">
               <button class="btn btn-secondary" type="button" onclick="getConverter()">Converter</button>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
   </main>
