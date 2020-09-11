@@ -1,45 +1,102 @@
 
 const value2Gold = {
-  '\ud83c\uddfa\ud83c\uddf8 Dolar': 5, '\ud83c\udde6\ud83c\uddfa Dolar Autraliano': 4, '\ud83c\udde8\ud83c\udde6 Dolar Canadense': 4.22,
-  '\uD83C\uDDEA\uD83C\uDDFA Euro': 6.59, '	\ud83c\uddeb\ud83c\uddf7 Franco Suiço': 6.12, '\ud83c\udded\ud83c\uddf2 Libra Estrelina': 7.35,
-  '\ud83c\uddf9\ud83c\uddf7 Lira Turca': 0.76, '\ud83c\udde7\ud83c\uddf7 Real': 1, '\ud83c\udde8\ud83c\uddf3 Renminbi': 0.076,
-  '	\ud83c\udde6\ud83c\uddf7 Peso Argentino': 0.80
+  'Dolar':{
+    'displayName':'Dolar',
+    'abbreviation': 'USD',
+    'flagCode': '\ud83c\uddfa\ud83c\uddf8',
+    'value':5.0
+  },
+   'Dolar Autraliano':{
+    'displayName':'Dolar Autraliano',
+    'abbreviation': 'AUD',
+    'flagCode': '\ud83c\udde6\ud83c\uddfa',
+    'value':4
+  },
+  'Dolar Canadense':{
+    'abbreviation': 'CAD',
+    'displayName':'Dolar Canadense',
+    'flagCode': '\ud83c\udde8\ud83c\udde6',
+    'value':4.22
+  },
+  'Euro':{
+    'abbreviation': 'EUR',
+    'displayName':'Euro',
+    'flagCode': '\uD83C\uDDEA\uD83C\uDDFA',
+    'value':6.59
+  },
+  'Franco Suiço':{
+    'abbreviation': 'SFr',
+    'displayName':'Franco Suiço',
+    'flagCode': '\ud83c\uddeb\ud83c\uddf7',
+    'value':6.21
+  },
+  'Libra Estrelina':{
+    'abbreviation': 'GPB',
+    'displayName':'Libra Estrelina',
+    'flagCode': '\ud83c\udded\ud83c\uddf2',
+    'value':7.35
+  },
+  'Lira Turca':{
+    'abbreviation': 'Tl',
+    'displayName':'Lira Turca',
+    'flagCode': '\ud83c\uddf9\ud83c\uddf7',
+    'value':0.76
+  },
+  'Lira Turca':{
+    'abbreviation': 'Tl',
+    'displayName':'Lira Turca',
+    'flagCode': '\ud83c\uddf9\ud83c\uddf7',
+    'value':0.76
+  },
+  'Real':{
+    'abbreviation': 'BRl',
+    'displayName':'Real',
+    'flagCode': '\ud83c\udde7\ud83c\uddf7',
+    'value':1
+  },
+  'Renminbi':{
+    'abbreviation': 'RMB',
+    'displayName':'Renminbi',
+    'flagCode': '\ud83c\udde8\ud83c\uddf3',
+    'value':0.076
+  },
+  'Peso Argentino':{
+    'abbreviation': 'ARS',
+    'displayName':'Peso Argentino',
+    'flagCode': '\ud83c\udde6\ud83c\uddf7',
+    'value':0.80
+  },
 }
 
 function generateHtmlOptions(selectedCurrency) {
-  const options = []
-  for (const currency of Object.keys(value2Gold)) {
-    if (selectedCurrency != null && currency === selectedCurrency) {
-      options.push(`<option selected>${currency}</option>`)
-    } else {
-      options.push(`<option>${currency}</option>`)
-    }
+  const options =[]
+  for (let [key, value] of Object.entries(value2Gold)) {
+      const optionDynamicPart = `value="${key}">${value['flagCode']} ${value['displayName']} ${value['abbreviation']}`
+
+      if (selectedCurrency != null && key === selectedCurrency) {
+          options.push(`<option selected ${optionDynamicPart}</option>`)
+      } else {
+          options.push(`<option ${optionDynamicPart}</option>`)
+      }
   }
   return options
 }
 
 function loadCurrencyOptions() {
-  document.getElementById("gold-select").innerHTML = generateHtmlOptions("\ud83c\uddfa\ud83c\uddf8 Dolar ")
-  document.getElementById("gold-converter").innerHTML = generateHtmlOptions('\ud83c\udde7\ud83c\uddf7 Real')
+  document.getElementById("gold-select").innerHTML = generateHtmlOptions('Dolar')
+  document.getElementById("gold-converter").innerHTML = generateHtmlOptions('Real')
 }
 
-function getGoldSelector() {
-  const value = getValueToConvert("#gold-select")
-  return value2Gold[value]
+function getCurrencyValue(selectorName) {
+  const currency = $(selectorName).val()
+  console.log(currency)
+  return value2Gold[currency]['value']
 }
 
-function getGoldConverter() {
-  const value = getValueToConvert("#gold-converter")
-  return value2Gold[value]
-}
-
-function getValueToConvert(selectorName) {
-  return $(selectorName).val()
-}
 
 function getConverter() {
-  const sourceCurrency = getGoldSelector()
-  const destCurrency = getGoldConverter()
+  const sourceCurrency = getCurrencyValue("#gold-select")
+  const destCurrency = getCurrencyValue("#gold-converter")
   const resultElement = document.getElementById("gold-result");
   const inputElement = document.getElementById("gold-value");
   resultElement.value = inputElement.value * (sourceCurrency / destCurrency);
