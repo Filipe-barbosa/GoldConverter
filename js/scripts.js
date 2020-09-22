@@ -67,49 +67,52 @@ const value2Gold = {
   },
 };
 
-function generateHtmlOptions(selectedCurrency) {
+const generateHtmlOptions = (selectedCurrency) => {
   const options = [];
-  for (let [key, value] of Object.entries(value2Gold)) {
-    const optionDynamicPart = `value="${key}">${value["flagCode"]} ${value["displayName"]} ${value["abbreviation"]}`;
+  for (let [currencyIdentifier, currencyDetails] of Object.entries(
+    value2Gold
+  )) {
+    const optionDynamicPart = `value="${currencyIdentifier}">${currencyDetails["flagCode"]} 
+    ${currencyDetails["displayName"]} ${currencyDetails["abbreviation"]}`;
 
-    if (selectedCurrency != null && key === selectedCurrency) {
+    if (selectedCurrency != null && currencyIdentifier === selectedCurrency) {
       options.push(`<option selected ${optionDynamicPart}</option>`);
     } else {
       options.push(`<option ${optionDynamicPart}</option>`);
     }
   }
   return options;
-}
+};
 
-function loadCurrencyOptions() {
+const loadCurrencyOptions = () => {
   document.getElementById("gold-select").innerHTML = generateHtmlOptions(
     "Dolar"
   );
   document.getElementById("gold-converter").innerHTML = generateHtmlOptions(
     "Real"
   );
-}
+};
 
-function getCurrencyValue(selectorName) {
+const getCurrencyValue = (selectorName) => {
   const currency = $(selectorName).val();
   return value2Gold[currency]["value"];
-}
+};
 
-function getConverter() {
+const getConverter = () => {
   const sourceCurrency = getCurrencyValue("#gold-select");
   const destCurrency = getCurrencyValue("#gold-converter");
   const resultElement = document.getElementById("gold-result");
   const inputElement = document.getElementById("gold-value");
   resultElement.value = inputElement.value * (sourceCurrency / destCurrency);
-}
+};
 
-function inputInverter() {
-  var goldInverterSelect = document.getElementById("gold-select");
-  var goldInverterConverter = document.getElementById("gold-converter");
-  var aux = goldInverterSelect.value;
-  goldInverterSelect.value = goldInverterConverter.value;
-  goldInverterConverter.value = aux;
+const inputInverter = () => {
+  var currencyInverterSelect = document.getElementById("gold-select");
+  var currencyInverterConverter = document.getElementById("gold-converter");
+  var currencyInveterOperationAux = currencyInverterSelect.value;
+  currencyInverterSelect.value = currencyInverterConverter.value;
+  currencyInverterConverter.value = currencyInveterOperationAux;
   getConverter();
-}
+};
 
 loadCurrencyOptions();
