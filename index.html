@@ -53,16 +53,18 @@
 
         <div class="row">
           <div class="col-md-5">
-            <select id="gold-select" class="custom-select bg-secondary text-white"onchange="getConverter()"> </select>
+            <select id="gold-select" class="custom-select bg-secondary text-white"
+              onchange="converterCurrencysAndDisplayValue()"> </select>
 
             <div id="inverter">
               <div class="col-md-2">
-                <img src="img/seta.png" width="35" onclick="  inputInverter()" title="Inverter Moedas">
+                <img src="img/seta.png" width="35" onclick="  flipSelectedCurrency ()" title="Inverter Moedas">
               </div>
             </div>
           </div>
           <div class="col-md-5">
-            <select id="gold-converter" class="custom-select bg-secondary text-white" onclick="getConverter()"></select>
+            <select id="gold-converter" class="custom-select bg-secondary text-white"
+              onclick="converterCurrencysAndDisplayValue()"></select>
           </div>
         </div>
 
@@ -74,7 +76,8 @@
         <div class="row">
           <div class="col-md-5">
             <form action=" ">
-              <input type="number" class="form-control" id="gold-value" name="moeda" onkeyup="getConverter()"
+              <input type="number" class="form-control" id="gold-value" name="moeda"
+                onkeyup="converterCurrencysAndDisplayValue()"
                 placeholder="Insira o valor a converter">
             </form>
           </div>
