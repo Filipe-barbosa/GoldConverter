@@ -93,26 +93,26 @@ const loadCurrencyOptions = () => {
   );
 };
 
-const getCurrencyValue = (selectorName) => {
+const getCurrencyNameIntoToValue = (selectorName) => {
   const currency = $(selectorName).val();
   return value2Gold[currency]["value"];
 };
 
-const getConverter = () => {
-  const sourceCurrency = getCurrencyValue("#gold-select");
-  const destCurrency = getCurrencyValue("#gold-converter");
+const converterCurrencysAndDisplayValue = () => {
+  const sourceCurrency = getCurrencyNameIntoToValue("#gold-select");
+  const destCurrency = getCurrencyNameIntoToValue("#gold-converter");
   const resultElement = document.getElementById("gold-result");
   const inputElement = document.getElementById("gold-value");
   resultElement.value = inputElement.value * (sourceCurrency / destCurrency);
 };
 
-const inputInverter = () => {
-  var currencyInverterSelect = document.getElementById("gold-select");
-  var currencyInverterConverter = document.getElementById("gold-converter");
-  var currencyInveterOperationAux = currencyInverterSelect.value;
+const flipSelectedCurrency= () => {
+  const currencyInverterSelect = document.getElementById("gold-select");
+  const currencyInverterConverter = document.getElementById("gold-converter");
+  const currencyInveterOperationAux = currencyInverterSelect.value;
   currencyInverterSelect.value = currencyInverterConverter.value;
   currencyInverterConverter.value = currencyInveterOperationAux;
-  getConverter();
+  converterCurrencysAndDisplayValue();
 };
 
 loadCurrencyOptions();
