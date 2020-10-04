@@ -35,29 +35,11 @@ const value2Gold = {
     flagCode: "\ud83c\udded\ud83c\uddf2",
     value: 7.35,
   },
-  "Lira Turca": {
-    abbreviation: "Tl",
-    displayName: "Lira Turca",
-    flagCode: "\ud83c\uddf9\ud83c\uddf7",
-    value: 0.76,
-  },
-  "Lira Turca": {
-    abbreviation: "Tl",
-    displayName: "Lira Turca",
-    flagCode: "\ud83c\uddf9\ud83c\uddf7",
-    value: 0.76,
-  },
   Real: {
-    abbreviation: "BRl",
+    abbreviation: "BRL",
     displayName: "Real",
     flagCode: "\ud83c\udde7\ud83c\uddf7",
     value: 1,
-  },
-  Renminbi: {
-    abbreviation: "RMB",
-    displayName: "Renminbi",
-    flagCode: "\ud83c\udde8\ud83c\uddf3",
-    value: 0.076,
   },
   "Peso Argentino": {
     abbreviation: "ARS",
@@ -93,20 +75,18 @@ const loadCurrencyOptions = () => {
   );
 };
 
-const getCurrencyNameIntoToValue = (selectorName) => {
+const getCurrencyNameIntoToAbreviation = (selectorName) => {
   const currency = $(selectorName).val();
-  return value2Gold[currency]["value"];
+  return value2Gold[currency]["abbreviation"];
 };
 
 const converterCurrencysAndDisplayValue = () => {
-  const sourceCurrency = getCurrencyNameIntoToValue("#gold-select");
-  const destCurrency = getCurrencyNameIntoToValue("#gold-converter");
-  const resultElement = document.getElementById("gold-result");
-  const inputElement = document.getElementById("gold-value");
-  resultElement.value = inputElement.value * (sourceCurrency / destCurrency);
+  const sourceCurrency = getCurrencyNameIntoToAbreviation("#gold-select");
+  const destCurrency = getCurrencyNameIntoToAbreviation("#gold-converter");
+  getValueInApiAndCoverter();
 };
 
-const flipSelectedCurrency= () => {
+const flipSelectedCurrency = () => {
   const currencyInverterSelect = document.getElementById("gold-select");
   const currencyInverterConverter = document.getElementById("gold-converter");
   const currencyInveterOperationAux = currencyInverterSelect.value;
@@ -114,5 +94,28 @@ const flipSelectedCurrency= () => {
   currencyInverterConverter.value = currencyInveterOperationAux;
   converterCurrencysAndDisplayValue();
 };
+const getValueInApiAndCoverter = () => {
+  fetch(
+    `https://api.exchangeratesapi.io/latest?base=${getCurrencyNameIntoToAbreviation(
+      "#gold-select"
+    )}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const currencyValue =
+        data["rates"][getCurrencyNameIntoToAbreviation("#gold-converter")];
+      console.log(currencyValue);
+      const resultElement = document.getElementById("gold-result");
+      const inputElement = document.getElementById("gold-value");
+      resultElement.value = inputElement.value * currencyValue;
+    });
+};
 
 loadCurrencyOptions();
+
+function getdatepicker() {
+  console.log("datepicker")
+  console.log($('#datetimepicker1').datetimepicker())
+};
+
+getdatepicker()
