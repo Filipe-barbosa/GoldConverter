@@ -112,3 +112,10 @@ const getValueInApiAndCoverter = () => {
 };
 
 loadCurrencyOptions();
+
+function getdatepicker() {
+  console.log("datepicker")
+  console.log($('#datetimepicker1').datetimepicker())
+};
+
+getdatepicker()
