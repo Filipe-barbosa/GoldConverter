@@ -11,9 +11,6 @@ body {
 .row {
   margin: 20px;
 }
-.container {
-  padding: 100px 0;
-}
 
 p,
 li {
@@ -28,7 +25,7 @@ header,
   background-color: rgb(163, 162, 162);
 }
 
-#nav-container {
+.nav-container {
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -70,42 +67,34 @@ header,
   padding: 1rem 0.8rem;
 }
 
-.btn {
-  font-family: arial;
-  font-size: 14px;
-  text-transform: uppercase;
-  padding: 10px;
-  cursor: pointer;
-  background-color: green;
-  align-content: center;
-  border-radius: 30px;
-  border: 3px solid transparent;
-  transition: 0.2s;
-  width: 15%;
-  margin-top: 20px;
-}
 #gold-select,
 .custom-select,
 .bg-secundary {
-  margin-left: 110px;
   border-radius: 30px;
   border: 3px solid transparent;
   transition: 0.5s;
-  width: 80%;
+  width: 40%;
   text-align: center;
-  padding: 5px;
-  position: relative;
   margin-top: 5px;
 }
 
-.container,#geral-container{
+.input {
+  border-radius: 30px;
+  width: 40%;
+}
 
+.main-container {
+  padding: 100px 200px;
   border: 2px solid #eee;
   box-shadow: 1px 1px 2px rgb(160, 140, 140);
-  margin-top: 50px;
-  padding: 20px  50px  50px 50px;
- 
+  margin: 150px;
+}
 
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
 }
 
 .main-title {
@@ -116,31 +105,6 @@ header,
   font-weight: bolder;
 }
 
-#gold-value {
-  margin-left: 110px;
-  border-radius: 30px;
-  width: 80%;
-}
-
-#gold-result {
-  margin-left: 110px;
-  border-radius: 30px;
-  width: 80%;
-}
-
-#inverter {
-  align-content: center;
-  margin-left: 400px;
-  margin-top: -35px;
-  cursor: pointer;
-}
-
-.button {
-  margin-left: 340px;
-  width: 80%;
-}
-
-
 
 .Extralight {
   font-family: ralewayExtralight;
@@ -149,239 +113,5 @@ header,
 .Bold {
   font-family: ralewayBold;
 }
-@media (max-width: 2000px) {
- 
-  #logo {
-    border-radius: 30px;
-    width: 70px;
-    text-align: center;
-    margin-left: 700px;
-    color: black;
-  }
-  @media (max-width: 1600px) {
- 
-    #logo {
-      border-radius: 30px;
-      width: 70px;
-      text-align: center;
-      margin-left: 500px;
-      color: black;
-    }
-
-@media (max-width: 1188px) {
-  .container,#geral-container{
-    border: 2px solid #eee;
-    box-shadow: 1px 1px 2px rgb(160, 140, 140);
-    margin-top: 50px;
-    padding: 20px  50px  50px 50px; 
-  
-  }
-  #logo {
-    border-radius: 30px;
-    width: 70px;
-    text-align: center;
-    margin-left: 350px;
-    color: black;
-  }
-  .container {
-    padding: 20px 0;
-    margin-top: 50px;
-    margin-right: 200px;
-  }
-  #inverter {
-    align-content: center;
-    margin-left: 370px;
-    margin-top: -35px;
-    cursor: pointer;
-  }
-  .button {
-    margin-left: 270px;
-    width: 110%;
-    margin-bottom: 20px;
-  }
-}
-@media (max-width: 900px) {
-  .container,#geral-container{
-    border: 2px solid #eee;
-    box-shadow: 1px 1px 2px rgb(160, 140, 140);
-    margin-top: 50px;
-    padding: 20px  50px  50px 50px; 
-  
-  }
-  .container {
-    padding: 20px 0;
-    margin-top: 50px;
-  }
-  #inverter {
-    margin-left: 280px;
-    align-content: center;
-   
-    margin-top: -35px;
-    cursor: pointer;
-  }
-  .button {
-    margin-left: 200px;
-    width: 110%;
-    margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container,#geral-container{
-    border: 2px solid #eee;
-    box-shadow: 1px 1px 2px rgb(160, 140, 140);
-    margin-top: 50px;
-    padding: 20px  50px  50px 50px; 
-  
-  }
-  #logo {
-    border-radius: 30px;
-    width: 70px;
-    text-align: center;
-    margin-left: 200px;
-    color: black;
-  }
-  .container {
-    padding: 20px 0;
-    margin-top: 50px;
-  }
-  #inverter {
-    align-content: center;
-    margin-left: 200px;
-    margin-top: -35px;
-    cursor: pointer;
-  }
-  .button {
-    margin-left: 200px;
-    width: 110%;
-    margin-bottom: 20px;
-  }
-  #gold-value {
-    margin-left: 30px;
-    border-radius: 30px;
-    width: 80%;
-  }
-  #gold-select,
-.custom-select,
-.bg-secundary {
-  margin-left: 30px;
-  border-radius: 30px;
-  border: 3px solid transparent;
-  transition: 0.5s;
-  width: 80%;
-  text-align: center;
-  padding: 5px;
-  position: relative;
-  margin-top: 5px;
-}
-.main-title {
-  margin-left: 30px;
-  color: #444;
-  margin-top: 30px;
-  font-size: 20px;
-  font-weight: bolder;
-}
-#gold-result {
-  margin-left: 30px;
-  border-radius: 30px;
-  width: 80%;
-}
-@media (max-width: 415px) {
-  #logo {
-    width: 40px;
-    text-align: center;
-    margin-left: 50px;
-  }
-  #logo p {
-    width: 80px;
-    text-align: center;
-    font-size: 5px;
-  }
-
-  .container {
-    margin-top:50px ;
-    padding: 20px 0;
- 
-  }
-  #inverter {
-    align-content: center;
-    margin-left: 80px;
-    margin-top: 12px;
-    cursor: pointer;
-   margin-bottom: 10px;
-  }
-  #inputvalue, .form-control {
-    padding: 2px 2px;
-    margin: 10px;
-  }
-
-  
-  .button {
-    margin-left: 70px;
-    width: 210%;
-    margin-bottom: 0px;
-    box-sizing: border-box;
-    font-size: 2px;
-    margin-top: 10px;
-    
-  }
-  .main-title {
-    margin-left: 50px;
-    color: #444;
-    margin-top: 30px;
-    font-size: 20px;
-    font-weight: bolder;
-  }
- 
- 
-   
-}
 
 
-@media (max-width: 375px) {
- 
-  #logo {
-    width: 50px;
-    text-align: center;
-    margin-left: 40px;
-  }
-  #logo p {
-    width: 10px;
-    text-align: center;
-    font-size: 5px;
-  }
-
-  #gold-select , .custom-select ,.bg-secundary{
-    border-radius: 50px;
-  }
-  .container {
-    margin-top:50px ;
-    padding: 20px 0;
- 
-  }
-  #inverter {
-    align-content: center;
-    margin-left: 70px;
-    margin-top: 12px;
-    cursor: pointer;
-   margin-bottom: 10px;
-  }
-  #inputvalue, .form-control {
-    padding: 2px 2px;
-    margin: 10px;
-  }
-
-  
-  .button {
-    margin-left: 70px;
-    width: 210%;
-    margin-bottom: 0px;
-    box-sizing: border-box;
-    font-size: 2px;
-    margin-top: 10px;
-    
-  }
- 
- 
-   
-}
