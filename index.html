@@ -29,7 +29,7 @@
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <div class="nav-container">
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
 
@@ -45,26 +45,24 @@
           <div class="navbar-nav">
       </nav>
     </div>
-  </header>
+  </header> -->
   <main>
     <div class="main-container">
 
       <div class="flex-container" id="input-select">
-        <select id="gold-select" class="custom-select bg-secondary text-white"
+        <select id="gold-select" class="rounded-field bg-secondary text-white"
           onchange="converterCurrencysAndDisplayValue()"> </select>
 
         <img src="img/seta.png" width="35" onclick=" flipSelectedCurrency()" title="Inverter Moedas">
 
-        <select id="gold-converter" class="custom-select bg-secondary text-white"
+        <select id="gold-converter" class="rounded-field bg-secondary text-white"
           onclick="converterCurrencysAndDisplayValue()"></select>
       </div>
 
-      <div class="row"></div>
-
       <div class="flex-container" id="export-select">
-        <input type="number" id="gold-value" class="input" placeholder="Insira o valor a converter"
+        <input type="number" id="gold-value" class="rounded-field" placeholder="Insira o valor a converter"
           onkeyup="converterCurrencysAndDisplayValue()">
-        <input type="number" id="gold-result" class="input" placeholder="Valor Convertido">
+        <input type="number" id="gold-result" class="rounded-field" placeholder="Valor Convertido">
       </div>
     </div>
   </main>
