@@ -30,7 +30,7 @@
 
 <body>
   <header>
-    <div class="container" id="nav-container">
+    <div class="nav-container">
       <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
 
         <a href="#" class="navbar-brand">
@@ -47,47 +47,24 @@
     </div>
   </header>
   <main>
-    <div class="container" id="geral-container">
+    <div class="main-container">
 
-      <div id="insert-values">
-        <div class="container">
+      <div class="flex-container" id="input-select">
+        <select id="gold-select" class="custom-select bg-secondary text-white"
+          onchange="converterCurrencysAndDisplayValue()"> </select>
 
-          <div class="row">
-            <div class="col-md-5">
-              <select id="gold-select" class="custom-select bg-secondary text-white"
-                onchange="converterCurrencysAndDisplayValue()"> </select>
+        <img src="img/seta.png" width="35" onclick=" flipSelectedCurrency()" title="Inverter Moedas">
 
-              <div id="inverter">
-                <div class="col-md-2">
-                  <img src="img/seta.png" width="35" onclick="  flipSelectedCurrency ()" title="Inverter Moedas">
-                </div>
-              </div>
-            </div>
-            <div class="col-md-5">
-              <select id="gold-converter" class="custom-select bg-secondary text-white"
-                onclick="converterCurrencysAndDisplayValue()"></select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <h4 class="main-title">Valor</h4>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-5">
-              <form action=" ">
-                <input type="number" class="form-control" id="gold-value" name="moeda"
-                  onkeyup="converterCurrencysAndDisplayValue()" placeholder="Insira o valor a converter">
-              </form>
-            </div>
-            <div class="col-md-5">
-              <form action=" ">
-                <input type="number" class="form-control" id="gold-result" name="moeda" placeholder="Valor Convertido">
-              </form>
-            </div>
-          </div>
+        <select id="gold-converter" class="custom-select bg-secondary text-white"
+          onclick="converterCurrencysAndDisplayValue()"></select>
+      </div>
 
-        </div>
+      <div class="row"></div>
+
+      <div class="flex-container" id="export-select">
+        <input type="number" id="gold-value" class="input" placeholder="Insira o valor a converter"
+          onkeyup="converterCurrencysAndDisplayValue()">
+        <input type="number" id="gold-result" class="input" placeholder="Valor Convertido">
       </div>
     </div>
   </main>
